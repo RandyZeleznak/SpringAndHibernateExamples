@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zsquared.springdemo.entity.Customer;
 import com.zsquared.springdemo.service.CustomerService;
@@ -43,11 +44,31 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
+		
+		// get customer from our service
+		Customer customer = customerService.getCustomer(theId);
+		
+		//set customer as model attribute to pre-populate fields
+		theModel.addAttribute("customer",customer);
+		
+		// send over to the form
+		return "customer-form";
+	}
+	
 	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Customer customer) {
+	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
 		
 		// save the customer
-		customerService.saveCustomer(customer);
+		customerService.saveCustomer(theCustomer);
+		return "redirect:/customer/list";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("customerId") int theId) {
+		// delete the customer
+		customerService.deleteCustomer(theId);
 		return "redirect:/customer/list";
 	}
 }
