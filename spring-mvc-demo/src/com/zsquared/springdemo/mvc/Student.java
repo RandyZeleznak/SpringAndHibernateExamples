@@ -14,13 +14,13 @@ public class Student {
 	private String[] operatingSystems;
 	
 	public Student() {
-		countryOptions = new LinkedHashMap<>();
+	/*	countryOptions = new LinkedHashMap<>();
 		countryOptions.put("BR","Brazil");
 		countryOptions.put("FR","France");
 		countryOptions.put("DE","Germany");
 		countryOptions.put("IN","India");
-		countryOptions.put("US","United States");
-	}
+		countryOptions.put("US","United States"); */
+	}	
 
 	public String getFirstName() {
 		return firstName;
