@@ -26,8 +26,6 @@ public class GetInstructorDetailDemo {
 		
 		try {
 			
-			
-			
 			// start a transaction
 			session.beginTransaction();
 			
@@ -37,9 +35,6 @@ public class GetInstructorDetailDemo {
 			System.out.println("Instructor Detail = " +instructorDetail);
 			
 			System.out.println("The associated Instructor = " +instructorDetail.getInstructor());
-			
-			
-			
 			
 			//commit transaction
 			session.getTransaction().commit();

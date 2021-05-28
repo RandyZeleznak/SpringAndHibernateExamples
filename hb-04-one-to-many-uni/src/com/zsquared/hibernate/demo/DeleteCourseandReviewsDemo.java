@@ -35,11 +35,13 @@ public class DeleteCourseandReviewsDemo {
 			// start a transaction
 			session.beginTransaction();
 			
-			int theId = 2;
+			int theId = 1;
 			Course course = session.get(Course.class, theId);
 			
-			System.out.println("The Course: "+course) ;
-			System.out.println("The Rviews" +course.getReviews());
+			System.out.println("Deleting  Course: "+course) ;
+			System.out.println("and Reviews" +course.getReviews());
+			
+			session.delete(course);
 			
 			//commit transaction
 			session.getTransaction().commit();

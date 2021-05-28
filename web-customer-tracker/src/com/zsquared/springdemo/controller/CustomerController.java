@@ -52,7 +52,7 @@ public class CustomerController {
 		
 		//set customer as model attribute to pre-populate fields
 		theModel.addAttribute("customer",customer);
-		
+		 
 		// send over to the form
 		return "customer-form";
 	}

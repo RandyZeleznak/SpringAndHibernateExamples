@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"  -->
+
 <beans xmlns="http://www.springframework.org/schema/beans" 
         xmlns:context="http://www.springframework.org/schema/context" 
         xmlns:mvc="http://www.springframework.org/schema/mvc" 
         xmlns:util="http://www.springframework.org/schema/util" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
     	http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -41,7 +38,7 @@
 	
 	</bean>
 	
-	<util:properties id="countryOptions" locaton="classpath:../countries.properties"/>
+	<util:properties  id="countryOptions"  location="classpath:../countries.properties"  /> 
 	
 	
 

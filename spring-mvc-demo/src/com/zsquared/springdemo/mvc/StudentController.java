@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StudentController {
 	
 	@Value("#{countryOptions}")
-	private Map<String, String> countryOptions;
+	private Map<String, String> countryOptions; 
 	
 	@RequestMapping("/showForm")
 	public String showForm(Model theModel) {

@@ -27,21 +27,18 @@ public class GetCourseandReviewsDemo {
 		//create session 
 		Session session = factory.getCurrentSession();
 		
-		try {
-			
-			
-		
+		try {	
 			
 			// start a transaction
 			session.beginTransaction();
 			
-			int theId = 2;
+			int theId = 1;
 			Course course = session.get(Course.class, theId);
 			
-			System.out.println("Deleting the: "+course) ;
+			System.out.println("The Course: "+course) ;
 			System.out.println("The Rviews" +course.getReviews());
 			
-			session.delete(course);
+		
 			
 			//commit transaction
 			session.getTransaction().commit();

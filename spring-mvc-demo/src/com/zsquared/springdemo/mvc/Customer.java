@@ -21,7 +21,7 @@ public class Customer {
 	@Max(value=	10, message="must be less then or equal to ten(10)")
 	private Integer freePasses;
 	
-	@Pattern(regexp="^[0-9]{5}",message="only 5 digits")
+	@Pattern(regexp="^[a-zA-Z0-9]{5}",message="only 5 digits")
 	private String postalCode;
 	
 	@CourseCode

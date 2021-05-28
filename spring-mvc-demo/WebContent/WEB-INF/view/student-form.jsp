@@ -26,7 +26,11 @@
 	Country:
 	
 	<form:select path="country">
-	<form:options items="${theCountryOptions}"/>
+	<form:options items="${theCountryOptions}"/> 
+	<!-- 	<form:option value="Brazil" label="Brazil"/>
+		<form:option value="France" label="France"/>
+		<form:option value="Germany" label="Germany"/>
+		<form:option value="India" label="India"/> -->
 	
 	</form:select>
 	

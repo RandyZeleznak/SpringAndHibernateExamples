@@ -26,24 +26,19 @@ public class CreateDemo {
 		
 		try {
 			
+			// create objects 
+			Instructor instructor = new Instructor("Eddie", "VanHalen" , "eddie@vanhalen.com");
+			InstructorDetail instructorDetail = new InstructorDetail("http://www.youtube.com", "Playing Guitar");
 			
+			// associate objects
+			instructor.setInstructorDetail(instructorDetail);
 			
 			// start a transaction
 			session.beginTransaction();
 			
-			// get instructor by id
-			
-			int  theId = 1;
-			Instructor instructor = session.get(Instructor.class, theId);
-			
-			System.out.println("Found instructor - > " +instructor);
-			
-			// delete instructors
-			if(instructor != null) {
-				System.out.println("Deleting ");
-				session.delete(instructor);
-			}
-			
+			// save the instructor and Instructor Detail by cascade
+			System.out.println("Saving Instructor -> "+ instructor);
+			session.save(instructor);
 			
 			
 			//commit transaction

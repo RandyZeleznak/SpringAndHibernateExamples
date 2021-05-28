@@ -37,11 +37,13 @@ public class CreateCourseandStudentsDemo {
 			// start a transaction
 			session.beginTransaction();
 			
+		
+			
 			// Get student Mary from database
-			int studentId = 2;
+			int studentId = 1;
 			Student student = session.get(Student.class, studentId);
-			System.out.println("\nLoaded Student : " +student);
-			System.out.println(" Course" +student.getCourses());
+			//System.out.println("\nLoaded Student : " +student);
+			//System.out.println(" Course" +student.getCourses());
 			
 			//	add student to classes
 			Course course1 = new Course("Philosophy of Religion");
@@ -52,6 +54,20 @@ public class CreateCourseandStudentsDemo {
 			// save the courses
 			session.save(course1);
 			session.save(course2);
+			
+			
+			Student student1 = new Student("John", "Deacon","jdeacon@queen.com");
+			Student student2 = new Student("Steven", "Tyler","styler@aerosmith.com");
+			
+			course1.addStudent(student1);
+			course1.addStudent(student2);
+			course2.addStudent(student1);
+			
+			session.save(student1);
+			session.save(student2);
+			
+			System.out.println("Students course1 :" +course1.getStudents());
+			System.out.println("Students course2 :" +course2.getStudents());
 			
 			//commit transaction
 			session.getTransaction().commit();
